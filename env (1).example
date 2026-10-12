@@ -1,0 +1,3 @@
+GROQ_API_KEY=
+GROQ_MODEL=llama-3.3-70b-versatile
+OPS_PILOT_DB=opspilot_audit.db
