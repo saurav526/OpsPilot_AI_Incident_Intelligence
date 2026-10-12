@@ -1,5 +1,5 @@
 # Payments service runbook
-
+<!-- overall it ensure and check latency and timmeout of payements -->
 ## Payment timeouts
 1. Check provider response latency and timeout rates.
 2. Compare application latency with external provider latency.
