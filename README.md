@@ -1,6 +1,45 @@
-# OpsPilot AI — Incident Intelligence & Resolution Copilot
+# OpsPilot AI: Incident Intelligence & Resolution Copilot
 
-A runnable portfolio project demonstrating data science, anomaly detection, runbook retrieval, a tool-using incident assistant, REST API, Streamlit dashboard, and SQLite audit logging. Uses synthetic telemetry; no production actions are executed.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-REST%20API-009688?logo=fastapi&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Isolation%20Forest-F7931E?logo=scikitlearn&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Audit%20Log-003B57?logo=sqlite&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)
+
+An AI copilot that helps on-call engineers investigate incidents. It ranks unusual
+metric patterns with anomaly detection, retrieves relevant runbook guidance, and
+composes evidence-backed, **read-only** recommendations. It runs on synthetic
+telemetry and never executes production actions.
+
+![Dashboard screenshot](docs/dashboard.png)
+
+## Features
+
+- **Anomaly detection**: StandardScaler + Isolation Forest to surface unusual metric combinations
+- **Runbook retrieval**: TF-IDF / cosine similarity over a markdown knowledge base
+- **Investigation agent**: combines metrics, anomalies, and runbooks into a recommended set of checks
+- **Optional LLM**: Groq-powered answers, with a deterministic local fallback when no key is set
+- **REST API**: FastAPI with request validation and interactive docs at `/docs`
+- **Dashboard**: Streamlit UI for exploring metrics, anomalies, and investigations
+- **Audit trail**: every investigation logged to SQLite
+
+## How it works
+
+```
+Question + service
+      │
+      ▼
+ Metrics summary ──► Anomaly scores (Isolation Forest)
+      │                       │
+      └────────┬──────────────┘
+               ▼
+     Runbook retrieval (TF-IDF)
+               ▼
+   Agent composes evidence + read-only next steps
+               ▼
+        Response + SQLite audit log
+```
 
 ## Quick start (Windows PowerShell)
 Install Python 3.11, unzip this folder, open it in VS Code, then run:
