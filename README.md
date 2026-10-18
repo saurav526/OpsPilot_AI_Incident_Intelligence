@@ -1,5 +1,5 @@
 # OpsPilot AI: Incident Intelligence & Resolution Copilot
-
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-REST%20API-009688?logo=fastapi&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)
@@ -96,3 +96,6 @@ Limitations: synthetic data, lexical retrieval, simple routing, no authenticatio
 
 ## Production hardening
 Add authentication/authorization, rate limits, secret management, structured monitoring, a labeled evaluation set, drift monitoring, model versioning, and human approval gates before any write action.
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
